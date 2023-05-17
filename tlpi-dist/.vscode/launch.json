@@ -238,5 +238,47 @@
           }
         ],
       },
+      {
+        "name": "multi_wait",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/procexec/multi_wait",
+        "args": [
+          "5"
+        ],
+        "stopAtEntry": true,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+      },
+      {
+        "name": "t_execve",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/procexec/t_execve",
+        "args": [
+          "/bin/echo"          
+        ],
+        "stopAtEntry": true,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+      },
     ]
 }

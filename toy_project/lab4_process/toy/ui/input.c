@@ -25,6 +25,22 @@ int create_input()
     printf("여기서 input 프로세스를 생성합니다.\n");
 
     /* fork 를 이용하세요 */
+    systemPid = fork();
+    switch(systemPid)
+    {
+      case -1:
+        printf("Failed!!!\n");
+        break;
+      case 0:
+          printf(" current Process id = %d :: parent pid = %d \n",systemPid, getppid());
+          input();
+          break;
+      default:
+            printf("parent id = %d \n", systemPid);
+          break;
+    }
+
+
 
     return 0;
 }

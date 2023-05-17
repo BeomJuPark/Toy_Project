@@ -25,6 +25,20 @@ int create_system_server()
     printf("여기서 시스템 프로세스를 생성합니다.\n");
 
     /* fork 를 이용하세요 */
+    systemPid = fork();
+    switch(systemPid)
+    {
+      case -1:
+        printf("Form Failed system server----\n");
+        break;
+      case 0:
+        printf("Parent Pid = %d :: Child Pid = %d \n", systemPid, getppid());
+        system_server();
+        break;
+      default:
+
+        printf("Parent Pid = %d \n", systemPid);
+    }
 
     return 0;
 }
